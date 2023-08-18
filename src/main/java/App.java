@@ -1,3 +1,5 @@
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -8,5 +10,15 @@ public class App {
         HelloWorld bean =
                 (HelloWorld) applicationContext.getBean("helloworld");
         System.out.println(bean.getMessage());
+        System.out.println(bean.getMessage());
+        System.out.println(bean.getMessage()==bean.getMessage());
+        Cat cat1 = (Cat) applicationContext.getBean("cat");
+        Cat cat2 = (Cat) applicationContext.getBean("cat");
+        System.out.println(cat1.getMessage());
+        System.out.println(cat2.getMessage());
+        System.out.println(cat1==cat2);
+
     }
+
+
 }
